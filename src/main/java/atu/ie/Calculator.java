@@ -5,29 +5,18 @@ import java.util.Scanner;
 public class Calculator {
     public static void main(String[] args) {
 
-        System.out.println("Please enter the first number: "); //Enter first number
+        System.out.println("Please enter the base number: "); //Enter base number
         Scanner sc = new Scanner(System.in);
-        int a = sc.nextInt();
-        System.out.println("Please enter the second number: "); //Enter first number
-        int b = sc.nextInt();
-        System.out.println("Please enter an operation: "); //Enter first number
-        String op = sc.next();
-        switch (op) {
-            case "divide": divide(a, b); break;
-            default: System.out.println("Invalid operation"); break;
-        }
-    }
+        int base = sc.nextInt();
+        System.out.println("Please enter the exponent: "); //Enter exponent
+        int exponent = sc.nextInt();
 
-    public static void divide(int a, int b)
-    {
-        if (b != 0) {
-            double difference = (double) a / b;
-
-            int sum = a / b;
-            System.out.println("The difference is: " + sum);
-        }else{
-            System.out.println("Error: Division by zero is not allowed");
-        }
+        calculateExponential(base, exponent); //Directly calling th method to calculate exponent
 
     }
-}
+
+    public static void calculateExponential(int base, int exponent) {
+        double result = Math.pow(base, exponent); //Using Math.pow to calculate exponential
+        System.out.println("The result is: " + result);
+    }
+    }
