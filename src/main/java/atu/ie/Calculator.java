@@ -13,15 +13,21 @@ public class Calculator {
         System.out.println("Please enter an operation: "); //Enter first number
         String op = sc.next();
         switch (op) {
-            case "subtract": subtract(a, b); break;
+            case "divide": divide(a, b); break;
             default: System.out.println("Invalid operation"); break;
         }
     }
 
-    public static void subtract(int a, int b)
+    public static void divide(int a, int b)
     {
-        int sum = a - b;
-        System.out.println("The difference is: " + sum);
+        if (b != 0) {
+            double difference = (double) a / b;
+
+            int sum = a / b;
+            System.out.println("The difference is: " + sum);
+        }else{
+            System.out.println("Error: Division by zero is not allowed");
+        }
 
     }
 }
